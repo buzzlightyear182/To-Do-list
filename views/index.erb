@@ -1,0 +1,16 @@
+<html>
+	<body>
+		<form name="todolist" action="/results" method="post">
+		    Add your tasks <input type="text" name="task"/><br />
+        <input type="submit" value="Submit now"/>
+		</form>
+
+		<form method="post" name="tasklist">
+			<% @tasklist.each {|x| %>
+				<input type="checkbox" name="animal" value="<%= x %>" /><%= x %><br>
+			<% } %>
+		    <input type="submit" value="Done" />
+		</form>
+		<script src="../public/script.js"></script>
+	</body>
+</html>

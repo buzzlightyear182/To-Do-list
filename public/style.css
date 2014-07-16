@@ -1,0 +1,21 @@
+body {
+	font-family: Helvetica, sans-serif;
+	background-color: black;
+	color: white;
+}
+
+.hidden {
+	color: black;
+}
+
+.wholepage {
+	margin: auto;
+}
+
+/*ul li:nth-child(2n+1) {
+	color: blue;
+}
+
+ul li:nth-child(2n) {
+	color: green;
+}*/
