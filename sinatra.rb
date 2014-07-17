@@ -1,12 +1,13 @@
 require 'sinatra'
-require 'PStore'
-#require 'yaml/store'
+# require 'PStore'
+require 'yaml/store'
 require 'json'
 
 #PStore is a big class containing many storage objects
-store = PStore.new('data.PStore') 				#creates a new storage called 'store'
+# store = PStore.new('data.PStore') 				#creates a new storage called 'store'
 
-#YAML store (as text file) --> store = YAML::Store.new("data.yml")
+# YAML store (as text file) -->
+store = YAML::Store.new("data.yml")
 
 get '/' do
 	#to transfer the storage 'store' to index view
@@ -39,5 +40,15 @@ post '/results' do
 		store[:task_list] << params["task"]		#update index
 	end											#commit changes to storage
 	# redirect to '/beta'
+end
+
+post '/deletions' do
+	puts "You want to delete #{params.inspect}"
+	store.transaction do
+		deleteIndex = store[:task_list].index {|x| x == params["task"]}
+		store[:task_list].delete_at(deleteIndex);
+		@item_list = store[:task_list]
+	end
+	@item_list.to_json
 end
 
