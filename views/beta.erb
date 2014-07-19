@@ -6,16 +6,18 @@
 
 	<body>
 		<div id = "wholepage">
-		<p class="hidden"> This is Beta.erb</p><br>
-		    <h1>Add your tasks</h1><br />
-		    <input id="taskText" type="text" name="task"/>
-        	<input type="button" value="Add task" id="start"/>
-		<form method="post">
-			<div id="container"></div>
-		</form>
-
-		<button type="submit" value="Delete task" id="delete">Delete tasks</button>
-
+			<header>
+		    	<h1>Things to Do</h1>
+			</header>
+			<form method="post">
+			    <input id="taskText" type="text" size="40" name="task"/>
+		    	<button type="button" value="Add task" id="start"/>Add Task</button>
+        	</form>
+	        	<div class = "resulta">
+				<ul id="container">
+				</ul>
+				<button type="submit" value="Delete task" id="delete">Delete Task</button>
+			</div>
 		<script type="text/javascript" src="script.js"></script>
 		</div>
 	</body>

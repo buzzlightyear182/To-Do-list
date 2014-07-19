@@ -3,7 +3,7 @@ var container = document.getElementById("container");
 
 var printEach = function(res){
 	for (var i = k; i < res.length; i++) {
-		$(container).append('<input type="radio" name="task" class="checks" value="' + res[i] + '"/>' + res[i] + "<br>");
+		$(container).append('<li><input type="radio" name="task" class="checks" value="' + res[i] + '"/>' + res[i] + "</li>");
 		k++;
 	}
 
@@ -15,7 +15,7 @@ var printEach = function(res){
 
 $('#start').on('click', function(){
 	console.log("Button clicked");
-
+	console.log($("#taskText").val());
 	$.post('/results', {task: $("#taskText").val()}, function() {
 			event.preventDefault();
 	});
@@ -29,9 +29,8 @@ $('#delete').on('click', function(event){
 	event.preventDefault();
 
 	var selected = $('input.selected');
-
 	$.post('/deletions', {task: selected.val()}, function(response) {
-			selected.css('display', 'none');
+	selected.parent().css('display', 'none');
 	});
 
 });
