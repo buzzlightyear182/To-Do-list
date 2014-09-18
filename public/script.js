@@ -23,7 +23,6 @@ $('#start').on('click', function(){
 	$.post('/results', {
 		task: $("#taskText").val()
 	}, function() {
-			event.preventDefault();
 	})
 
 	$.get('/api/items', printEach, "json");
