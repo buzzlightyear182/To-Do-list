@@ -1,9 +1,5 @@
-# Empty ruby project
+# To-Do List Application
 
-## Developing
+Exercise on using Rack, Sinatra and Ruby
 
-You can use Guard to run tests automatically
-
-```
-guard -i
-```
+Build a simple application to create a task list based on user input
