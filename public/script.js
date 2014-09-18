@@ -13,12 +13,18 @@ var printEach = function(res){
 	});
 };
 
+$(document).ready(function() {
+	$.get('/api/items', printEach, "json");
+});
+
 $('#start').on('click', function(){
 	console.log("Button clicked");
 	console.log($("#taskText").val());
-	$.post('/results', {task: $("#taskText").val()}, function() {
+	$.post('/results', {
+		task: $("#taskText").val()
+	}, function() {
 			event.preventDefault();
-	});
+	})
 
 	$.get('/api/items', printEach, "json");
 });
@@ -29,8 +35,10 @@ $('#delete').on('click', function(event){
 	event.preventDefault();
 
 	var selected = $('input.selected');
-	$.post('/deletions', {task: selected.val()}, function(response) {
-	selected.parent().css('display', 'none');
+	$.post('/deletions', {
+		task: selected.val()
+	}, function(response) {
+		selected.parent().css('display', 'none');
 	});
 
 });

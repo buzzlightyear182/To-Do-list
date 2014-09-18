@@ -1,16 +1,25 @@
 <html>
-	<body>
-		<form name="todolist" action="/results" method="post">
-		    Add your tasks <input type="text" name="task"/><br />
-        <input type="submit" value="Submit now"/>
-		</form>
+	<head>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
 
-		<form method="post" name="tasklist">
-			<% @tasklist.each {|x| %>
-				<input type="checkbox" name="animal" value="<%= x %>" /><%= x %><br>
-			<% } %>
-		    <input type="submit" value="Done" />
-		</form>
-		<script src="../public/script.js"></script>
+	<body>
+		<div id = "wholepage">
+			<header>
+		    	<h1>Things to Do</h1>
+			</header>
+			<form method="post">
+			    <input id="taskText" type="text" size="40" name="task"/>
+		    	<button type="button" value="Add task" id="start"/>Add Task</button>
+        	</form>
+	        	<div class = "resulta">
+				<ul id="container">
+				</ul>
+				<button type="submit" value="Delete task" id="delete">Delete Task</button>
+			</div>
+		<script type="text/javascript" src="script.js"></script>
+		</div>
 	</body>
 </html>
+

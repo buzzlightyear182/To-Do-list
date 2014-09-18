@@ -18,12 +18,7 @@ get '/' do
 	erb :index
 end
 
-get '/beta' do
-	erb :beta
-end
-
 get '/api/items' do
-
 	store.transaction do
 		@item_list = store[:task_list]
 		@item_list.to_json
@@ -39,7 +34,6 @@ post '/results' do
 		store[:task_list] ||= []				#create index
 		store[:task_list] << params["task"]		#update index
 	end											#commit changes to storage
-	# redirect to '/beta'
 end
 
 post '/deletions' do
