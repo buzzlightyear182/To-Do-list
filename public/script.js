@@ -3,14 +3,9 @@ var container = document.getElementById("container");
 
 var printEach = function(res){
 	for (var i = k; i < res.length; i++) {
-		$(container).append('<li><input type="radio" name="task" class="checks" value="' + res[i] + '"/>' + res[i] + "</li>");
+		$(container).append('<li><input type="radio" id="radio0' + i + '" name="task" class="checks" value="' + res[i] + '"/><label for="radio0' + i + '">' + res[i] + "</label></li>");
 		k++;
 	}
-
-	$('input[type="radio"]').on('change', function(evt) {
-		if (evt.target.checked) evt.target.classList.add('selected');
-		if (!evt.target.checked) evt.target.classList.remove('selected');
-	});
 };
 
 $(document).ready(function() {
@@ -18,8 +13,6 @@ $(document).ready(function() {
 });
 
 $('#start').on('click', function(){
-	console.log("Button clicked");
-	console.log($("#taskText").val());
 	$.post('/results', {
 		task: $("#taskText").val()
 	}, function() {
@@ -29,11 +22,10 @@ $('#start').on('click', function(){
 });
 
 $('#delete').on('click', function(event){
-	console.log("Delete button clicked");
-
 	event.preventDefault();
 
-	var selected = $('input.selected');
+	var selected = $('input[type="radio"]:checked');
+
 	$.post('/deletions', {
 		task: selected.val()
 	}, function(response) {

@@ -1,19 +1,30 @@
 <html>
 	<head>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A simple Ruby Sinatra app to track tasks">
+    <meta name="author" content="buzzlightyear182">
+    <title>To-Do Tasklist</title>
+
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="style.css">
 	</head>
 
 	<body>
-		<div id = "wholepage">
+		<div id="wholepage">
 			<header>
 		    	<h1>Things to Do</h1>
+		    	<p>Create your own tasklist, simply type in and add task!</p>
+		    	<p>To remove a task, click on the text and then delete button</p>
 			</header>
 			<form method="post">
 			    <input id="taskText" type="text" size="40" name="task"/>
 		    	<button type="button" value="Add task" id="start"/>Add Task</button>
-        	</form>
-	        	<div class = "resulta">
+       </form>
+	     <div class="resulta">
 				<ul id="container">
 				</ul>
 				<button type="submit" value="Delete task" id="delete">Delete Task</button>

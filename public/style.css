@@ -1,38 +1,66 @@
 body {
-	font-family: Helvetica, sans-serif;
-	background-color: #16a085;
-	color: white;
+	background-color: #384252;
+	margin: 0px;
+	font-family: 'Montserrat', Helvetica, sans-serif;
+}
+
+#wholepage {
+	margin: auto;
+	max-width: 80%;
 }
 
 header {
 	padding: 5px;
 	text-align: center;
+	color: #FFFFDD;
 }
 
 form {
-	padding: 20px 10px;
-	background-color: #1abc9c;
+	text-align: center;
+	padding: 10px 0 20px 0;
 	margin: auto;
 	border-radius: 10px;
 }
 
-input {
-	padding: 10px;
-	margin: auto;
+input[type='text'] {
+	border: 1px solid #C0EFD2;
+  padding: 10px;
+  outline: 0px;
+  font-size: 1em;
+  width: 100%;
+  color: #384252;
+}
+
+input[type='text']:focus, input[type='text']:hover{
+	-webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  border: 2px solid #C0EFD2;
+  box-shadow: 0 0 5px #C0EFD2;
 }
 
 button {
 	padding: 10px;
+	-webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+	border: 1px solid #C0EFD2;
 	border-radius: 5px;
-	background-color: #ecf0f1;
+	background-color: #C0EFD2;
+	color: #384252;
+	font-size: 1em;
+}
+
+button:hover {
+	background-color: #E25858;
+	border: 1px solid #E25858;
+	color: white;
 }
 
 .hidden {
 	display: none;
-}
-
-.wholepage {
-	margin: auto;
 }
 
 #container {
@@ -40,29 +68,59 @@ button {
 	padding: 0px;
 }
 
-#start {
-	margin-top: 10px;
-}
-
-input.checks {
-	margin-right: 10px;
-	padding: 10px;
-}
-
-ul li {
+ul#container li {
 	list-style: none;
-	margin: 5px 0;
-	background-color: #f39c12;
-	padding: 10px;
 	color: #2c3e50;
-	border-radius: 5px;
-	border: 1px solid #ecf0f1;
+	padding: 0px;
+	margin-bottom: 1px;
 }
 
-ul li:nth-child(2n) {
-	background-color: #f39c12;
+ul#container li:nth-child(2n) {
+	background-color: #FFFFDD;
 }
 
-ul li:nth-child(2n+1) {
-	background-color: #f1c40f;
+ul#container li:nth-child(2n+1) {
+	background-color: #E9D6AF;
+}
+
+ul#container li:hover {
+	-webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+	font-size: 1.5em;
+	background-color: #FFF;
+	color: #E25858;
+}
+
+input[type='radio'] {
+	display: none;
+}
+
+input[type='radio'] + label {
+  color: #384252;
+  cursor: pointer;
+  line-height: 2em;
+}
+
+label {
+	padding: 10px 0px 10px 10px;
+}
+
+input[type='radio'] + label:hover {
+	color: #E25858;
+}
+
+input[type='radio']:checked + label {
+	color: #E25858;
+	font-size: 1.5em;
+}
+
+.resulta {
+	margin: auto;
+}
+
+button#delete {
+	margin: 20px auto;
+	text-align: center;
 }
