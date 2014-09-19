@@ -124,3 +124,20 @@ button#delete {
 	margin: 20px auto;
 	text-align: center;
 }
+
+footer {
+  color: #FFFFDD;
+  text-align: right;
+  font-style: italic;
+  font-size: 0.8em;
+  margin: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #FFFFDD;
+}
+
+footer a:hover {
+  color: #E9D6AF;
+}
